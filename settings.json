@@ -1,0 +1,63 @@
+{
+  // ==================== 基础配置 ====================
+  "effortLevel": "high",
+  "includeCoAuthoredBy": false,
+
+  // ==================== 已启用 Plugins ====================
+  "enabledPlugins": {
+    "claude-md-management@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "github@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true
+  },
+
+  // ==================== 环境变量（敏感信息需替换） ====================
+  "env": {
+    // ⚠️ 必须替换为你的实际 token
+    "ANTHROPIC_AUTH_TOKEN": "YOUR_ANTHROPIC_TOKEN_HERE",
+    // ⚠️ 如果使用第三方 API endpoint，在此替换
+    "ANTHROPIC_BASE_URL": "https://api.minimaxi.com/anthropic",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_MODEL": "MiniMax-M2.7",
+    "ANTHROPIC_REASONING_MODEL": "MiniMax-M2.7",
+    "API_TIMEOUT_MS": "3000000",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+
+  // ==================== MCP Servers ====================
+  "mcpServers": {
+    "tradingview": {
+      "command": "/Users/liumeng/.local/bin/uvx",
+      "args": ["--python", "3.13", "--from", "tradingview-mcp-server", "tradingview-mcp"]
+    }
+  },
+
+  // ==================== 权限配置 ====================
+  "permissions": {
+    "allow": [
+      "Read", "Glob", "Grep", "Edit", "Write",
+      "Bash(ls:*)", "Bash(cd:*)", "Bash(pwd)", "Bash(mkdir:*)", "Bash(cp:*)",
+      "Bash(mv:*)", "Bash(rm:*)", "Bash(cat:*)", "Bash(echo:*)", "Bash(which:*)",
+      "Bash(head:*)", "Bash(tail:*)", "Bash(wc:*)", "Bash(diff:*)", "Bash(chmod:*)",
+      "Bash(chown:*)", "Bash(tar:*)", "Bash(unzip:*)", "Bash(zip:*)", "Bash(find:*)",
+      "Bash(xargs:*)", "Bash(sort:*)", "Bash(uniq:*)", "Bash(grep:*)", "Bash(curl:*)",
+      "Bash(wget:*)", "Bash(python3:*)", "Bash(pip3:*)", "Bash(git:*)", "Bash(npx:*)",
+      "Bash(npm:*)", "Bash(yarn:*)", "Bash(brew:*)", "Bash(ssh:*)", "Bash(scp:*)",
+      "Bash(rsync:*)", "Bash(df:*)", "Bash(du:*)", "Bash(ps:*)", "Bash(kill:*)",
+      "Bash(killall:*)", "Bash(open:*)", "Bash(code:*)", "Bash(jq:*)", "Bash(gh:*)",
+      "Agent", "WebSearch", "WebFetch(domain:*)", "Skill(*)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
+
+  // ==================== 沙盒配置 ====================
+  "sandbox": {
+    "network": {
+      "allowedDomains": []
+    }
+  }
+}
